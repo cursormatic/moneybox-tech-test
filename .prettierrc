@@ -1,0 +1,23 @@
+{
+  "arrowParens": "avoid",
+  "trailingComma": "none",
+  "jsxBracketSameLine": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "@",
+    "^[^./]+",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "[./a-zA-Z0-9]*(fixtures|fixture|typings|types)"
+  ],
+  "importOrderTypeScriptVersion": "5.7.3",
+  "importOrderCaseSensitive": true
+}
