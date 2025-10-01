@@ -1,0 +1,12 @@
+.mb-product {
+  background-color: white;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 0.5rem 1rem;
+
+  .mb-product-title:hover {
+    .mb-button-expander {
+      background-color: var(--color-primary-500);
+    }
+  }
+}
