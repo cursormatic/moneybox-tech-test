@@ -1,0 +1,9 @@
+.mb-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+
+  svg {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
