@@ -51,3 +51,10 @@ export const Small: Story = {
     label: 'Button'
   }
 };
+
+export const Xsmall: Story = {
+  args: {
+    size: 'xsmall',
+    label: 'Button'
+  }
+};
