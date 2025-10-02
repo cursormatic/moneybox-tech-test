@@ -1,8 +1,10 @@
 export type Categories = 'Investing' | 'Saving' | 'Home-buying' | 'Retirement';
 
 export interface CategoriesState {
+  availableCategories: Categories[];
   entities: { [type: string]: Category };
-  ids: string[];
+  ids: Categories[];
+  categoryMap: Record<Categories, string[]>;
 }
 
 export interface Category {

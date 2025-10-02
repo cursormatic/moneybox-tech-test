@@ -4,7 +4,14 @@ import type { CategoriesState, Category, Product } from './typings.ts';
 
 export const initialState: CategoriesState = {
   entities: {},
-  ids: []
+  ids: [],
+  availableCategories: ['Investing', 'Saving', 'Home-buying', 'Retirement'],
+  categoryMap: {
+    Investing: ['General Investment Account', 'Junior ISA', 'Stocks & Shares ISA'],
+    Saving: ['Cash ISA', 'Open Access Cash ISA', 'Simple Saver', '32 Day Notice', '95 Day Notice'],
+    'Home-buying': ['Life Time ISA'],
+    Retirement: ['Personal Pension']
+  }
 };
 
 const categories = createSlice({
