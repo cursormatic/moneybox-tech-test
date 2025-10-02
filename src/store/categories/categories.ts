@@ -34,6 +34,10 @@ const categories = createSlice({
       const { category, description, title, type } = action.payload;
       state.entities[category].products = [...(state.entities[category]?.products ?? []), { description, title, type }];
     },
+    deleteProduct: (state, action: PayloadAction<{ category: string; product: string }>) => {
+      const { category, product } = action.payload;
+      state.entities[category].products = state.entities[category]?.products?.filter(p => p.type !== product) ?? [];
+    },
     selectedCategory: (state, action: PayloadAction<Categories>) => {
       state.selectedCategory = action.payload;
     }
