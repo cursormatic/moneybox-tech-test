@@ -6,6 +6,7 @@ import type { ButtonProps } from './typing.ts';
 
 export const Button: React.FC<ButtonProps> = ({
   className = '',
+  disabled = false,
   primary = false,
   size = 'medium',
   backgroundColor,
@@ -16,6 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
+      disabled={disabled}
       className={['mb-button', `mb-button-${size}`, mode, className].join(' ')}
       style={{ backgroundColor }}
       {...props}

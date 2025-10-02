@@ -12,6 +12,12 @@
     background-color: var(--color-primary-900);
     color: var(--color-primary-500);
   }
+
+  &:disabled {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+  }
 }
 
 .mb-button-primary {
