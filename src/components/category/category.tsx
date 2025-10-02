@@ -12,6 +12,7 @@ export const Category: React.FC<CategoryProps> = ({
   title = '',
   products = [],
   addProductHandler = noop,
+  deleteProductHandler = noop,
   disableAddProduct = false,
   deleteCategoryHandler = noop,
   ...props
@@ -37,7 +38,13 @@ export const Category: React.FC<CategoryProps> = ({
         </div>
       </div>
       {products.map(({ title, type, description }, idx) => (
-        <Product key={`${title}-${idx}`} description={description} title={title} type={type} />
+        <Product
+          deleteProductHandler={deleteProductHandler}
+          key={`${title}-${idx}`}
+          description={description}
+          title={title}
+          type={type}
+        />
       ))}
     </div>
   );

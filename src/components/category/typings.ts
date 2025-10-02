@@ -4,6 +4,11 @@ import type { ProductProps } from '../product/typings.ts';
 
 export interface CategoryProps extends React.PropsWithChildren {
   addProductHandler?: () => void;
+
+  // we want to allow any type of function
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  deleteProductHandler?: (...args: any[]) => void;
+
   // we want to allow any type of function
   /* eslint-disable @typescript-eslint/no-explicit-any */
   deleteCategoryHandler?: (...args: any[]) => void;

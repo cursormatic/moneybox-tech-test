@@ -9,6 +9,7 @@ const meta = {
   tags: ['autodocs'],
   args: {
     addProductHandler: action('addProductHandler was called'),
+    deleteProductHandler: action('deleteProductHandler was called'),
     deleteCategoryHandler: action('deleteCategoryHandler was called')
   },
   parameters: {
