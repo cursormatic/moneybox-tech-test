@@ -12,7 +12,7 @@ export const AddProductForm: React.FC<AddProductFormProps> = ({ callback, produc
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mb-add-product-form flex flex-col gap-2">
-      <label htmlFor="category">Please choose a product</label>
+      <label htmlFor="product">Please choose a product</label>
       <select {...register('product', { required: true })} className="mb-add-product-form-select">
         {products.map(product => (
           <option key={product} value={product}>
@@ -20,7 +20,9 @@ export const AddProductForm: React.FC<AddProductFormProps> = ({ callback, produc
           </option>
         ))}
       </select>
-      <input type="submit" className="mb-button mb-button-primary p-2 w-fit" />
+      <div className="flex justify-center">
+        <input type="submit" className="mb-submit-button mb-button mb-button-primary p-2 w-fit" />
+      </div>
     </form>
   );
 };
