@@ -39,7 +39,8 @@
   position: absolute !important;
   max-width: 500px !important;
   min-width: 320px !important;
-  top: 40% !important;
+  max-height: 150px !important;
+  top: 20% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
