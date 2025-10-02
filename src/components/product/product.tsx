@@ -20,6 +20,8 @@ export const Product: React.FC<ProductProps> = ({
 
   const expandHandler = () => setExpanded(!expanded);
 
+  const deleteHandler = (product: string) => () => deleteProductHandler(product);
+
   return (
     <div className="mb-product w-full" {...props}>
       <div className="mb-product-title flex justify-between items-center hover:cursor-pointer" onClick={expandHandler}>
@@ -36,7 +38,7 @@ export const Product: React.FC<ProductProps> = ({
           <div className="mb-product-description">{description}</div>
         </div>
         <div className="flex justify-center">
-          <Button size="small" className="mb-button-expander" label="Delete Product" onClick={deleteProductHandler} />
+          <Button size="small" className="mb-button-expander" label="Delete" onClick={deleteHandler(type)} />
         </div>
       </div>
     </div>
