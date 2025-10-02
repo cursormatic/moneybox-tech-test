@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,6 +18,11 @@ function MoneyboxApp() {
   const dispatch = useDispatch();
   const categories = useSelector<AppState, CategoriesState>(state => state.categories);
   const [toggleCategoriesModal, setToggleCategoriesModal] = useState(false);
+
+  const availableCategories = useMemo(
+    () => categories.availableCategories.filter(cat => !categories.ids.includes(cat)),
+    [categories.availableCategories, categories.ids]
+  );
 
   const toggleModal = useCallback(() => setToggleCategoriesModal(prev => !prev), []);
 
@@ -41,7 +46,7 @@ function MoneyboxApp() {
           primary
           label="Add Category"
           onClick={toggleModal}
-          disabled={categories.availableCategories.length === categories.ids.length}
+          disabled={!availableCategories.length}
         />
       </div>
       <div className="mb-grid flex row">
@@ -50,7 +55,7 @@ function MoneyboxApp() {
         ))}
       </div>
       <Modal isOpen={toggleCategoriesModal} shouldCloseOnEsc={true} shouldCloseOnOverlayClick={true}>
-        <AddCategoryForm categories={categories.availableCategories} callback={addCategoryHandler} />
+        <AddCategoryForm categories={availableCategories} callback={addCategoryHandler} />
       </Modal>
     </Page>
   );
