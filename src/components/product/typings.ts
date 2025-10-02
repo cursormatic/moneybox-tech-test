@@ -13,6 +13,9 @@ export type ProductTypes =
   | 'Stocks & Shares ISA';
 
 export interface ProductProps extends React.PropsWithChildren {
+  // we want to allow any type of function
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  deleteProductHandler?: (...args: any[]) => void;
   description: string | JSX.Element;
   title?: string;
   type: ProductTypes;

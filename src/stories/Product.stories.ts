@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 
 import { Product } from '../components/product/product.tsx';
 
@@ -6,6 +7,9 @@ const meta = {
   title: 'Example/Product',
   component: Product,
   tags: ['autodocs'],
+  args: {
+    deleteProductHandler: action('deleteProductHandler was called')
+  },
   parameters: {
     layout: 'padded'
   }
