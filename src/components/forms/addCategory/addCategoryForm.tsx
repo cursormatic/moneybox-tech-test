@@ -3,20 +3,21 @@ import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import './addCategoryForm.css';
 
+import type { Categories } from '../../../store/categories/typings.ts';
 import type { AddCategoryFormProps, Inputs } from './typings.ts';
 
 export const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ callback, categories }) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = data => callback(data);
+  const onSubmit: SubmitHandler<Inputs> = ({ category }) => callback(category as Categories);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mb-add-category-form flex flex-col gap-2">
       <label htmlFor="category">Please choose a category</label>
       <select {...register('category', { required: true })} className="mb-add-category-form-select">
-        {categories.map(({ title, type }) => (
-          <option key={type} value={type}>
-            {title}
+        {categories.map(category => (
+          <option key={category} value={category}>
+            {category}
           </option>
         ))}
       </select>

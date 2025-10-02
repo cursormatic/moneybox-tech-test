@@ -1,10 +1,10 @@
-import type { Category } from '../../../store/categories/typings.ts';
+import type { Categories } from '../../../store/categories/typings.ts';
 
 export interface Inputs {
   category: string;
 }
 
 export interface AddCategoryFormProps {
-  categories: Category[];
-  callback: (...args: unknown[]) => void;
+  categories: string[];
+  callback: (category: Categories) => void;
 }
