@@ -12,6 +12,7 @@ export const Category: React.FC<CategoryProps> = ({
   title = '',
   products = [],
   addProductHandler = noop,
+  disableAddProduct = false,
   deleteCategoryHandler = noop,
   ...props
 }) => {
@@ -24,6 +25,7 @@ export const Category: React.FC<CategoryProps> = ({
             className="mb-category-add-product-cta"
             label="Add Product"
             size="small"
+            disabled={disableAddProduct}
             onClick={addProductHandler}
           />
           <Button
