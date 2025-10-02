@@ -23,12 +23,12 @@ export const Primary: Story = {
     title: 'Savings',
     products: [
       {
-        type: 'CashIsa',
+        type: 'Cash ISA',
         description:
           'A Cash ISA is an individual savings account that you can use to earn interest on your money. You can save up to £20,000 into a Cash ISA each tax year, and the interest you earn is completely tax-free.'
       },
       {
-        type: 'Savings32Day',
+        type: '32 Day Notice',
         description:
           'Get 3.77% AER variable on your savings with the Moneybox 32 Day Notice Account and save towards your short-term goals with ease.'
       }

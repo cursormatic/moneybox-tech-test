@@ -18,7 +18,7 @@ const categories = createSlice({
     },
     addProduct: (state, action: PayloadAction<Product & { category: string }>) => {
       const { category, description, title, type } = action.payload;
-      state.entities[category].products = [...state.entities[category].products, { description, title, type }];
+      state.entities[category].products = [...(state.entities[category]?.products ?? []), { description, title, type }];
     }
   }
 });

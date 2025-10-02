@@ -18,7 +18,7 @@ export const Primary: Story = {
   args: {
     description:
       'Get 3.77% AER variable on your savings with the Moneybox 32 Day Notice Account and save towards your short-term goals with ease.',
-    type: 'Savings32Day'
+    type: '32 Day Notice'
   }
 };
 
@@ -27,6 +27,6 @@ export const CustomTitle: Story = {
     title: 'A custom title for the Savings 32 Day Notice product',
     description:
       'Get 3.77% AER variable on your savings with the Moneybox 32 Day Notice Account and save towards your short-term goals with ease.',
-    type: 'Savings32Day'
+    type: '32 Day Notice'
   }
 };
