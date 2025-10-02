@@ -20,17 +20,6 @@ type Story = StoryObj<typeof meta>;
 
 export const AddCategory: Story = {
   args: {
-    categories: [
-      {
-        products: [],
-        title: 'Retirement',
-        type: 'Retirement'
-      },
-      {
-        products: [],
-        title: 'Home-buying',
-        type: 'Home-buying'
-      }
-    ]
+    categories: ['Retirement', 'Home-buying']
   }
 };
