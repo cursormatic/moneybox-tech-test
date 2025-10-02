@@ -77,6 +77,11 @@ function MoneyboxApp() {
     [dispatch, categories.selectedCategory]
   );
 
+  const deleteProductHandler = useCallback(
+    (category: string) => (product: string) => dispatch(actions.deleteProduct({ category, product })),
+    [dispatch]
+  );
+
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
@@ -99,6 +104,7 @@ function MoneyboxApp() {
             title={category}
             products={categories.entities[category].products}
             deleteCategoryHandler={deleteCategoryHandler(category)}
+            deleteProductHandler={deleteProductHandler(category)}
             addProductHandler={setSelectedCategoryHandler(category)}
             disableAddProduct={disableAddProduct(category)}
           />
