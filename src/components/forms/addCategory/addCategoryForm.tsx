@@ -20,7 +20,9 @@ export const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ callback, cate
           </option>
         ))}
       </select>
-      <input type="submit" className="mb-button mb-button-primary p-2 w-fit" />
+      <div className="flex justify-center">
+        <input type="submit" className="mb-submit-button mb-button mb-button-primary p-2 w-fit" />
+      </div>
     </form>
   );
 };
