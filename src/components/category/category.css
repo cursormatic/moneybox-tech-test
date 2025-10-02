@@ -17,6 +17,17 @@
   .mb-product {
     margin-bottom: 1rem;
   }
+
+  .mb-category-delete-cta {
+    /*background-color: var(--color-teal-100);*/
+    /*display: none;*/
+  }
+
+  &:hover {
+    .mb-category-delete-cta {
+      display: block;
+    }
+  }
 }
 
 @media (max-width: 425px) {

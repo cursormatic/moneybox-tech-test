@@ -12,13 +12,27 @@ export const Category: React.FC<CategoryProps> = ({
   title = '',
   products = [],
   addProductHandler = noop,
+  deleteCategoryHandler = noop,
   ...props
 }) => {
   return (
-    <div className="mb-category w-full" {...props}>
-      <div className="mb-category-title my-2">
+    <div className="mb-category w-full relative" {...props}>
+      <div className="mb-category-title my-2 flex flex-col">
         <div className="text-2xl font-extrabold mb-2">{title}</div>
-        <Button className="mb-category-add-product-cta" label="Add Product" size="small" onClick={addProductHandler} />
+        <div className="mb-category-ctas flex w-full justify-around">
+          <Button
+            className="mb-category-add-product-cta"
+            label="Add Product"
+            size="small"
+            onClick={addProductHandler}
+          />
+          <Button
+            className="mb-category-add-product-cta"
+            label="Delete Category"
+            size="small"
+            onClick={deleteCategoryHandler}
+          />
+        </div>
       </div>
       {products.map(({ title, type, description }, idx) => (
         <Product key={`${title}-${idx}`} description={description} title={title} type={type} />

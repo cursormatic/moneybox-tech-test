@@ -8,7 +8,8 @@ const meta = {
   component: Category,
   tags: ['autodocs'],
   args: {
-    addProductHandler: action('addProductHandler was called')
+    addProductHandler: action('addProductHandler was called'),
+    deleteCategoryHandler: action('deleteCategoryHandler was called')
   },
   parameters: {
     layout: 'padded'

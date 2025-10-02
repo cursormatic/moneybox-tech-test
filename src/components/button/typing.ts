@@ -5,7 +5,9 @@ export interface ButtonProps {
   className?: string;
   disabled?: boolean;
   label: string | JSX.Element;
-  onClick?: () => void;
+  // we want to allow any type of function
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onClick?: (...args: any[]) => any;
   primary?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large';
 }
