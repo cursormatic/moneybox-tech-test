@@ -19,6 +19,11 @@
   --color-primary-900: #022828;
 }
 
+.slick-prev:before,
+.slick-next:before {
+  color: var(--color-primary-500);
+}
+
 p {
   margin: 1em 0;
 }

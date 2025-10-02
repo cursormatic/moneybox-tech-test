@@ -1,6 +1,8 @@
+import { useMediaQuery } from '@uidotdev/usehooks';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
+import Slider from 'react-slick';
 
 import { Button } from './components/button/button.tsx';
 import { Category } from './components/category/category.tsx';
@@ -21,6 +23,7 @@ function MoneyboxApp() {
   const categories = useSelector<AppState, CategoriesState>(state => state.categories);
   const [toggleCategoriesModal, setToggleCategoriesModal] = useState(false);
   const [toggleProductsModal, setToggleProductsModal] = useState(false);
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 768px)');
 
   const availableCategories = useMemo(
     () => categories.availableCategories.filter(cat => !categories.ids.includes(cat)),
@@ -82,6 +85,29 @@ function MoneyboxApp() {
     [dispatch]
   );
 
+  const categoriesList = useMemo(
+    () =>
+      categories.ids.map(category => (
+        <Category
+          key={category}
+          title={category}
+          products={categories.entities[category].products}
+          deleteCategoryHandler={deleteCategoryHandler(category)}
+          deleteProductHandler={deleteProductHandler(category)}
+          addProductHandler={setSelectedCategoryHandler(category)}
+          disableAddProduct={disableAddProduct(category)}
+        />
+      )),
+    [
+      categories.entities,
+      categories.ids,
+      deleteCategoryHandler,
+      deleteProductHandler,
+      disableAddProduct,
+      setSelectedCategoryHandler
+    ]
+  );
+
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
@@ -97,19 +123,21 @@ function MoneyboxApp() {
           disabled={!availableCategories.length}
         />
       </div>
-      <div className="mb-grid flex row">
-        {categories.ids.map(category => (
-          <Category
-            key={category}
-            title={category}
-            products={categories.entities[category].products}
-            deleteCategoryHandler={deleteCategoryHandler(category)}
-            deleteProductHandler={deleteProductHandler(category)}
-            addProductHandler={setSelectedCategoryHandler(category)}
-            disableAddProduct={disableAddProduct(category)}
-          />
-        ))}
-      </div>
+      {isSmallDevice ? (
+        <Slider
+          {...{
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }}
+        >
+          {categoriesList}
+        </Slider>
+      ) : (
+        <div className="mb-grid flex row">{categoriesList}</div>
+      )}
       <Modal
         isOpen={toggleCategoriesModal}
         shouldCloseOnEsc={true}
