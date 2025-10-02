@@ -23,6 +23,11 @@ const categories = createSlice({
       state.entities = { ...state.entities, [type]: { type, title, products: [] } };
       state.ids = [...state.ids, type];
     },
+    deleteCategory: (state, action: PayloadAction<string>) => {
+      const type = action.payload;
+      delete state.entities[type];
+      state.ids = state.ids.filter(id => id !== type);
+    },
     addProduct: (state, action: PayloadAction<Product & { category: string }>) => {
       const { category, description, title, type } = action.payload;
       state.entities[category].products = [...(state.entities[category]?.products ?? []), { description, title, type }];
