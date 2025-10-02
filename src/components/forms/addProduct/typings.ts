@@ -1,10 +1,13 @@
 import type { ProductTypes } from '../../product/typings.ts';
 
 export interface Inputs {
-  product: string;
+  description: string;
+  type: string;
 }
 
 export interface AddProductFormProps {
   products: ProductTypes[];
-  callback: (...args: unknown[]) => void;
+  // we want to allow any type of function
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  callback: (...args: any[]) => void;
 }
