@@ -1,0 +1,7 @@
+
+
+.mb-add-product-form-select {
+  padding: 5px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-neutral-200);
+}
