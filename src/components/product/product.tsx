@@ -53,7 +53,7 @@ export const Product: React.FC<ProductProps> = ({
               onBlur={onBlurDescriptionHandler}
             />
           ) : (
-            <div className="mb-product-description">{desc}</div>
+            <div className="mb-product-description wrap-anywhere">{desc}</div>
           )}
         </div>
         <div className="flex justify-center">
