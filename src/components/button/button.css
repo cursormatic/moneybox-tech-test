@@ -37,20 +37,44 @@
 .mb-button-xsmall {
   padding: 3px 10px;
   font-size: 10px;
+
+  &:disabled {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+  }
 }
 
 .mb-button-small {
   padding: 10px 16px;
   font-size: 12px;
+
+  &:disabled {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+  }
 }
 
 .mb-button-medium {
   padding: 11px 20px;
   font-size: 14px;
+
+  &:disabled {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+  }
 }
 
 .mb-button-large {
   padding: 12px 24px;
   font-size: 16px;
+
+  &:disabled {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+  }
 }
 
