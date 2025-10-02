@@ -1,6 +1,26 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+}
+
+.mb-grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+}
+
+@media (min-width: 768px) {
+  .mb-grid {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .mb-grid {
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .mb-grid {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
 }

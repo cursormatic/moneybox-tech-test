@@ -1,10 +1,16 @@
+import { Button } from './components/button/button.tsx';
+import { Page } from './components/page/page.tsx';
+
 import './MoneyboxApp.css';
 
 function MoneyboxApp() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="font-bold">Moneybox</h1>
-    </div>
+    <Page>
+      <div className="mb-4 text-center">
+        <Button size="medium" primary label="Add Category" />
+      </div>
+      <div className="mb-grid flex row" />
+    </Page>
   );
 }
 
