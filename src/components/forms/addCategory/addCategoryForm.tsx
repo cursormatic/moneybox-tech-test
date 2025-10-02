@@ -1,18 +1,9 @@
 import React from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
-import type { Category } from '../../../store/categories/typings.ts';
-
 import './addCategoryForm.css';
 
-interface Inputs {
-  category: string;
-}
-
-export interface AddCategoryFormProps {
-  categories: Category[];
-  callback: (...args: unknown[]) => void;
-}
+import type { AddCategoryFormProps, Inputs } from './typings.ts';
 
 export const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ callback, categories }) => {
   const { register, handleSubmit } = useForm<Inputs>();
