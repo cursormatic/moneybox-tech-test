@@ -1,7 +1,16 @@
 
 
+.mb-add-category-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%
+}
+
 .mb-add-category-form-select {
   padding: 5px;
   border-radius: var(--radius-md);
   background-color: var(--color-neutral-200);
+  width: 100%;
 }

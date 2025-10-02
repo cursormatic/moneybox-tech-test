@@ -12,15 +12,18 @@ export const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ callback, cate
   const onSubmit: SubmitHandler<Inputs> = ({ category }) => callback(category as Categories);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mb-add-category-form flex flex-col gap-2">
-      <label htmlFor="category">Please choose a category</label>
-      <select {...register('category', { required: true })} className="mb-add-category-form-select">
-        {categories.map(category => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
+    <form onSubmit={handleSubmit(onSubmit)} className="mb-add-category-form">
+      <h1 className="font-bold text-center">Add Category</h1>
+      <label htmlFor="category">
+        Please choose a category
+        <select {...register('category', { required: true })} className="mb-add-category-form-select w-full">
+          {categories.map(category => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </label>
       <div className="flex justify-center">
         <input type="submit" className="mb-submit-button mb-button mb-button-primary p-2 w-fit" />
       </div>
