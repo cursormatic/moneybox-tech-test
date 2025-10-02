@@ -34,6 +34,13 @@ function MoneyboxApp() {
     [dispatch, toggleModal]
   );
 
+  const deleteCategoryHandler = useCallback(
+    (category: Categories) => () => {
+      dispatch(actions.deleteCategory(category));
+    },
+    [dispatch]
+  );
+
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
@@ -51,7 +58,7 @@ function MoneyboxApp() {
       </div>
       <div className="mb-grid flex row">
         {categories.ids.map(category => (
-          <Category title={category} products={[]} />
+          <Category title={category} products={[]} deleteCategoryHandler={deleteCategoryHandler(category)} />
         ))}
       </div>
       <Modal isOpen={toggleCategoriesModal} shouldCloseOnEsc={true} shouldCloseOnOverlayClick={true}>
