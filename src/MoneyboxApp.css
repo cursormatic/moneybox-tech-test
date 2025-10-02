@@ -24,3 +24,22 @@
     grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
   }
 }
+
+/* Overriding styles here as react-modal uses style attributes */
+.ReactModal__Overlay,
+.ReactModal__Overlay--after-open {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+.ReactModal__Content,
+.ReactModal__Content--after-open {
+  position: absolute !important;
+  max-width: 500px !important;
+  min-width: 320px !important;
+  top: 40% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
