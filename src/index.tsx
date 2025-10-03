@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import MoneyboxApp from './MoneyboxApp.tsx';
+import MoneyboxApp from './moneyboxApp.tsx';
 import store from './store/store.ts';
 
 import 'slick-carousel/slick/slick.css';

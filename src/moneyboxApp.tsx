@@ -10,7 +10,7 @@ import { AddCategoryForm } from './components/forms/addCategory/addCategoryForm.
 import { Page } from './components/page/page.tsx';
 import { actions } from './store/categories/categories.ts';
 
-import './MoneyboxApp.css';
+import './moneyboxApp.css';
 
 import { AddProductForm } from './components/forms/addProduct/addProductForm.tsx';
 import type { AppState } from './store/AppState.ts';
