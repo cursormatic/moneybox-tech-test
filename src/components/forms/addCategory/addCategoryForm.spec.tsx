@@ -46,7 +46,7 @@ describe('AddCategoryForm', () => {
     // Mimic "no selection" by providing an empty placeholder option.
     const categoriesWithPlaceholder: (Categories | '')[] = ['', 'Saving', 'Investing'];
 
-    render(<AddCategoryForm categories={categoriesWithPlaceholder} callback={callback} />);
+    render(<AddCategoryForm categories={categoriesWithPlaceholder as Categories[]} callback={callback} />);
 
     await user.selectOptions(screen.getByRole('combobox'), '');
 

@@ -5,6 +5,6 @@ export interface Inputs {
 }
 
 export interface AddCategoryFormProps {
-  categories: string[];
+  categories: Categories[];
   callback: (category: Categories) => void;
 }
