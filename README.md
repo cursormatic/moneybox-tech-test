@@ -1,52 +1,112 @@
-# Moneybox Technical Task
-Thanks for taking the time to apply for a role in the Web Team at Moneybox.  This task is designed to replicate building a simple feature at Moneybox, it aims to assess your technical ability and better understand how you work.  Should you be successful with this task, you will then be asked to run through your solution with members of the team.
+# Moneybox Tech Test
 
-## The Brief
-As Moneybox grows it's product offering, we need a centralised way for customers to understand what we offer and see what product is right for them.  Therefore we want to create a singular page that shows all the products we offer in categories of different financial products.
+## Requirements
 
-As we are continually adding to our product range, we want this information to be able to be easily updated by a business user.
+### Prerequisites
+- **Node.js**: v20.19+, 22.12+ required (compatible with the packages used)
+- **npm**: Package manager (included with Node.js)
 
-The initial data set for our product / category range can be found on our [website](https://www.moneyboxapp.com/) and example assets for the products can be found in the assets folder.
+### System Requirements
+- Modern web browser for development and testing
+- Terminal/Command line access
+
+## Technologies Used
+
+### Core Technologies
+- **TypeScript** (v5.8.3) - Type-safe JavaScript
+- **React** (v19.1.1) - UI library
+- **Vite** (v7.1.7) - Build tool and development server
+
+### State Management
+- **Redux Toolkit** (v2.9.0) - State management
+- **React Redux** (v9.2.0) - React bindings for Redux
+
+### Styling
+- **Tailwind CSS** (v4.1.13) - Utility-first CSS framework
+- **@tailwindcss/vite** (v4.1.13) - Vite integration for Tailwind
+
+### UI Components & Libraries
+- **React Hook Form** (v7.63.0) - Form handling
+- **React Modal** (v3.16.3) - Modal dialogs
+- **React Slick** (v0.31.0) - Carousel component
+- **Slick Carousel** (v1.8.1) - Carousel functionality
+- **React Feather** (v2.0.10) - Icon library
+- **@uidotdev/usehooks** (v2.4.1) - Custom React hooks
+
+### Development & Testing
+- **Vitest** (v3.2.4) - Unit testing framework
+- **Testing Library** - React testing utilities
+- **Storybook** (v9.1.10) - Component development environment
+- **ESLint** (v9.36.0) - Code linting
+- **Prettier** (v3.6.2) - Code formatting
+
+## Installation
+
+```shell script
+npm install
+```
 
 
-#### Wireframe Design
+## Running the Project
 
-![Wireframe](src/assets/Wireframe.png "Wireframe")
+### Development Server
+```shell script
+npm run dev
+```
 
-#### Acceptance Criteria
+Starts the Vite development server (typically at `http://localhost:5173`)
 
- - A business user must be able to update this page (e.g. Require no Developer input to add a category or product)
-- This information must also be accessible by another platform (e.g. a Mobile App)
-- Display all the different Categories of Products that Moneybox offers
-- Display all Products within a Category
-- Show an Image & Description for each Product
-- Meet the UI requirements of the wireframe, while being visually appealing.
-- Any required tests
+### Linting
+```shell script
+npm run lint
+```
 
-#### Technical Constraints
-This must be written in **React.JS**.  All other technical decisions are up to you to decide.
-You are able to use any open source or free third party software to fulfill any of the requirements.
+Run ESLint to check code quality
 
-#### Time Constraints
-You should spend no longer than **3 hours** on this task.  We understand all the requirements in this brief may take longer than this time, so please prioritise which you think is most important.
+## Testing
 
-## What we are looking for
-- Key Requirements Met
-- Choice of Tech Stack & Architecture
-- Prioritisation of Work
-- Clear demonstration of Architectural Decisions
-- Maintainability & Extensibility
-- Clean & Modern UI
+### Run Tests
+```shell script
+npm test
+```
 
-## Use of AI
-The use of AI is allowed to complete this task.  However we expect you to fully understand every aspect of your project so you could maintain, build upon and debug your solution.
+Executes the Vitest test suites
 
-## Submitting your test
-Please push your project to a provide Github repository and invite  [jaeren@moneyboxapp.com](mailto:android@moneyboxapp.com)  to read your project.  Your project should include:
+## Storybook Setup
 
-- A working solution that can be run locally
-- A Readme file with a short description of your project and how to run it.  Including any access to third party software required to update the site.
+### What is Storybook?
+Storybook is an isolated component development environment that allows you to develop, test, and document UI components independently from the main application.
 
-Once sent please let the people team know and we will review your project as soon as possible.
+### Running Storybook
 
-We wish you all the best!
+**Start Storybook Development Server:**
+```shell script
+npm run storybook
+```
+
+This will start Storybook on `http://localhost:6006`
+
+### Storybook Configuration
+- **Framework**: React with Vite integration (`@storybook/react-vite`)
+- **Port**: 6006 (default)
+- **Plugins**: Includes `eslint-plugin-storybook` for linting story files
+
+## Third-Party Software & Access
+
+### No External Services Required
+This project is self-contained with no third-party API keys or external services required for basic development.
+
+## Development Workflow
+
+1. **Install dependencies**: `npm install`
+2. **Start development**: `npm run dev`
+3. **Develop components in isolation**: `npm run storybook`
+4. **Run tests**: `npm test`
+5. **Lint code**: `npm run lint`
+6. **Build for production**: `npm run build`
+
+## Notes
+- The project uses modern React 19 and TypeScript 5.8
+- All styling is handled through CSS and Tailwind CSS utility classes
+- Components can be developed and tested in isolation using Storybook
+- Tests are written using Vitest with React Testing Library
